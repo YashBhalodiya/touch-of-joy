@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Button } from "./ui/button";
@@ -24,17 +25,19 @@ export default function Contact() {
     setErrorMessage("");
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await axios.post(
+        "https://touch-of-joy-ne4u.onrender.com/api/contact",
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
-      const data = await response.json();
+      const data = response.data;
 
-      if (response.ok && data.success) {
+      if (data.success) {
         setStatus("success");
         setFormData({ name: "", email: "", message: "" });
         setTimeout(() => setStatus("idle"), 5000);
@@ -44,9 +47,13 @@ export default function Contact() {
       }
     } catch (error) {
       setStatus("error");
-      setErrorMessage(
-        "Failed to connect to the server. Please try again later.",
-      );
+      if (error.response && error.response.data && error.response.data.error) {
+        setErrorMessage(error.response.data.error);
+      } else {
+        setErrorMessage(
+          "Failed to connect to the server. Please try again later."
+        );
+      }
     }
   };
 

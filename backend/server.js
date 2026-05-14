@@ -8,7 +8,12 @@ const cor = require("cors");
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://touch-of-joy-liart.vercel.app/"
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 // Routes
@@ -28,13 +33,6 @@ const connectDB = async () => {
     console.error(`Error connecting to MongoDB: ${error.message}`);
   }
 };
-
-app.use(cors({
-  origin: [
-    "https://touch-of-joy-liart.vercel.app/"
-  ],
-  credentials: true
-}));
 
 const PORT = process.env.PORT || 5000;
 
