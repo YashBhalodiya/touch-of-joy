@@ -10,7 +10,7 @@ const app = express();
 // Middleware
 app.use(cors({
   origin: [
-    "https://touch-of-joy-liart.vercel.app/"
+    "https://touch-of-joy-liart.vercel.app"
   ],
   credentials: true
 }));
