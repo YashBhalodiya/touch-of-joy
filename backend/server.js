@@ -31,7 +31,7 @@ const connectDB = async () => {
 
 app.use(cors({
   origin: [
-    "https://your-frontend.vercel.app"
+    "https://touch-of-joy-liart.vercel.app/"
   ],
   credentials: true
 }));
