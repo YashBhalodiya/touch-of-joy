@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const contactRoutes = require('./routes/contact');
+const cor = require("cors");
 
 const app = express();
 
@@ -27,6 +28,13 @@ const connectDB = async () => {
     console.error(`Error connecting to MongoDB: ${error.message}`);
   }
 };
+
+app.use(cors({
+  origin: [
+    "https://your-frontend.vercel.app"
+  ],
+  credentials: true
+}));
 
 const PORT = process.env.PORT || 5000;
 
