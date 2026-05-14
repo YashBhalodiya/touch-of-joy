@@ -7,7 +7,7 @@ export default function Hero() {
     <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden min-h-screen flex items-center">
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#d7ebd8] via-[#f5f1eb] to-[#eebbaf] opacity-90"></div>
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="flex flex-col md:flex-row items-center">
+        <div className="flex flex-col md:flex-row items-center gap-8 lg:gap-12">
           
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -15,7 +15,7 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="w-full md:w-1/2 pt-10 md:pt-0"
           >
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif leading-[1.1] text-gray-900 mb-6">
+            <h1 className="text-5xl sm:text-6xl md:text-5xl lg:text-7xl xl:text-8xl font-serif leading-[1.1] text-gray-900 mb-6">
               Rejuvenate <br />
               Your Skin, <br />
               Glow Every Day.
@@ -36,7 +36,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="w-full md:w-1/2 relative mt-16 md:mt-0 flex justify-center md:justify-end"
           >
-            <div className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-square md:max-w-none md:w-[500px] md:h-[500px] mx-auto md:mx-0">
+            <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[500px] aspect-square mx-auto md:mx-0">
               <img 
                 src="/images/hero.png" 
                 alt="Beautiful woman" 
