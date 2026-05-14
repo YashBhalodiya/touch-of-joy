@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     allowedHosts: [
-      'mystery-worth-qui-glen.trycloudflare.com'
+      'lauderdale-transition-minimal-instruction.trycloudflare.com'
     ]
   }
 })
